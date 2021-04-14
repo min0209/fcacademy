@@ -42,6 +42,7 @@ public class UserRepositoryTest extends StudyApplicationTests{
 		});
 		
 	}
+	@Test
 	public void update() {
 		
 		Optional<User> user = userRepository.findById(2L);
@@ -55,8 +56,21 @@ public class UserRepositoryTest extends StudyApplicationTests{
 		});
 		
 	}
+	@Test
 	public void delete() {
+		Optional<User> user = userRepository.findById(2L);
 		
+		user.ifPresent(selectUser -> {
+			userRepository.delete(selectUser);			
+		});
+		
+		Optional<User> deleteUser = userRepository.findById(2L);
+		
+		if(deleteUser.isPresent()) {
+			System.out.println("데이터 존재 "+deleteUser.get());
+		}else {
+			System.out.println("데이터 삭제 데이터 없음");
+		}
 	}
 
 }

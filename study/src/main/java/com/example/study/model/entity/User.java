@@ -3,14 +3,15 @@ package com.example.study.model.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.*;
-import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor                                      
 @Entity // ==table
+@NoArgsConstructor
 public class User {
 
 	@Id

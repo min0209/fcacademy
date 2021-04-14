@@ -3,6 +3,8 @@ package com.example.study.repository;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,11 +32,27 @@ public class UserRepositoryTest extends StudyApplicationTests{
 		System.out.println("new user : "+newUser);
 		
 	}
-
+	
+	@Test
 	public void read() {
-
+		Optional<User> user = userRepository.findById(2L);
+		
+		user.ifPresent(selectUser -> {
+			System.out.println("user : "+selectUser);			
+		});
+		
 	}
 	public void update() {
+		
+		Optional<User> user = userRepository.findById(2L);
+		
+		user.ifPresent(selectUser -> {
+			selectUser.setAccount("update");
+			selectUser.setCreatedAt(LocalDateTime.now());
+			selectUser.setCreatedBy("update method()");
+			
+			userRepository.save(selectUser);
+		});
 		
 	}
 	public void delete() {

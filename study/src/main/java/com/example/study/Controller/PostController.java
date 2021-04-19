@@ -1,34 +1,25 @@
-package com.example.study.Controller;
-
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+package com.example.study.controller;
 
 import com.example.study.model.SearchParam;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
 public class PostController {
 
-	@PostMapping("/postMethod")
-	public SearchParam postMethod(@RequestBody SearchParam searchParam) {
-		
-		return searchParam;
-		
-	}
-	
-	
-	@PutMapping
-	public void put() {
-		
-	}
-	
-	@PatchMapping
-	public void patch() {
-		
-	}
+    @PostMapping(value = "/postMethod")
+    public SearchParam postMethod(@RequestBody SearchParam searchParam){
+        System.out.println(searchParam.getAccount());
+        return searchParam;
+    }
 
+    @PutMapping("/putMethod")
+    public void put(){
+
+    }
+
+    @PatchMapping("/patchMethod")
+    public void patch(){
+
+    }
 }

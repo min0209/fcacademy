@@ -1,6 +1,7 @@
 package com.example.study.repository;
 
 import com.example.study.StudyApplicationTests;
+import com.example.study.model.entity.Item;
 import com.example.study.model.entity.User;
 import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Assertions;
@@ -29,12 +30,17 @@ public class UserRepositoryTest extends StudyApplicationTests {
         //System.out.println(newUser);
     }
 
+    @Transactional
     @Test
     public void read(){
-        Optional<User> user = userRepository.findById(1L);
+        Optional<User> user = userRepository.findById(2L);
 
         user.ifPresent(selectUser -> {
-            System.out.println("user : "+selectUser);
+            selectUser.getOrderDetailList().stream().forEach( detail->{
+                Item item = detail.getItem();
+                System.out.println(item);
+            }
+            );
         });
     }
 

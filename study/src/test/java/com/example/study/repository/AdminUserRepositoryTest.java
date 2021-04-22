@@ -17,13 +17,15 @@ public class AdminUserRepositoryTest extends StudyApplicationTests {
 
         AdminUser adminUser = new AdminUser();
 
-        adminUser.setAccount("AdminUser1");
-        adminUser.setPassword("AdminUser1");
+        adminUser.setAccount("AdminUser3");
+        adminUser.setPassword("AdminUser3");
         adminUser.setStatus("REGISTERED");
         adminUser.setRole("PARTNER");
-        adminUser.setCreatedAt(LocalDateTime.now());
-        adminUser.setCreatedBy("AdminServer");
+        //adminUser.setCreatedAt(LocalDateTime.now());
+        //adminUser.setCreatedBy("AdminServer");
 
-        adminUserRepository.save(adminUser);
+        AdminUser newAdminUser = adminUserRepository.save(adminUser);
+        newAdminUser.setAccount("CHANGE");
+        adminUserRepository.save(newAdminUser);
     }
 }

@@ -2,6 +2,7 @@ package com.example.study.controller;
 
 import com.example.study.model.SearchParam;
 import com.example.study.model.entity.User;
+import com.example.study.model.network.Header;
 import com.example.study.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -47,5 +48,10 @@ public class GetController {
         user.setPhoneNumber("D");
         userRepository.save(user);
         System.out.println("create?");
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 }

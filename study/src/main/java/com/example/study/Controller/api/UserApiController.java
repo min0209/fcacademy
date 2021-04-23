@@ -9,10 +9,7 @@ import com.example.study.repository.UserRepository;
 import com.example.study.service.UserApiLogicService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
@@ -34,10 +31,11 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
     }
 
     @Override
-    public Header<UserApiResponse> read(Long id) {
+    @GetMapping("/{id}")
+    public Header<UserApiResponse> read(@PathVariable(name = "id") Long id) {
 
-
-        return null;
+        log.info("read id : {}",id);
+        return userApiLogicService.read(id);
     }
 
     @Override

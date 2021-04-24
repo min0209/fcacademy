@@ -34,12 +34,14 @@ public class ItemApiController implements CrudInterface<ItemApiRequest, ItemApiR
     @Override
     @PutMapping
     public Header<ItemApiResponse> update(@RequestBody Header<ItemApiRequest> request) {
-        return null;
+        log.info("{}",request);
+        return itemApiLogicService.update(request);
     }
 
     @Override
     @DeleteMapping("{id}")
     public Header<ItemApiResponse> delete(@PathVariable Long id) {
-        return null;
+        log.info("{}",id);
+        return itemApiLogicService.delete(id);
     }
 }

@@ -44,18 +44,41 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest,ItemApi
     @Override
     public Header read(Long id) {
         
-        return itemRepository.findById(id).map(user -> response(user))
+        return itemRepository.findById(id).map(item -> response(item))
                 .orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     @Override
-    public Header update(Header request) {
-        return null;
+    public Header<ItemApiResponse> update(Header<ItemApiRequest> request){
+
+        ItemApiRequest itemApiRequest = request.getData();
+        Optional<Item> optional = itemRepository.findById(itemApiRequest.getId());
+
+        return  optional.map( item -> {
+            item.
+                    setStatus(itemApiRequest.getStatus())
+                    .setName(itemApiRequest.getName())
+                    .setTitle(itemApiRequest.getTitle())
+                    .setContent(itemApiRequest.getContent())
+                    .setPrice(itemApiRequest.getPrice())
+                    .setBrandName(itemApiRequest.getBrandName())
+                    .setRegisteredAt(itemApiRequest.getRegisteredAt())
+                    .setUnregisteredAt(itemApiRequest.getUnregisteredAt())
+                    .setPartner(partnerRepository.getOne(itemApiRequest.getPartnerId()));
+                    return item;
+                    })
+                .map(item -> itemRepository.save(item))
+                .map(updateItem -> response(updateItem))
+                .orElseGet( () -> Header.ERROR("데이터 없음") );
     }
 
     @Override
     public Header delete(Long id) {
-        return null;
+        return itemRepository.findById(id)
+                .map( item ->  {
+                    itemRepository.delete(item);
+                    return Header.OK();
+                }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     private Header<ItemApiResponse> response(Item item){

@@ -78,7 +78,7 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest,ItemApi
                 .map( item ->  {
                     itemRepository.delete(item);
                     return Header.OK();
-                }).orElseGet(() -> Header.ERROR("데이터 없음"));
+                }).orElseGet(() -> Header.ERROR("데이터 없음 "));
     }
 
     private Header<ItemApiResponse> response(Item item){

@@ -78,7 +78,7 @@ public class OrderGroupApiLogicService extends BaseService<OrderGroupApiRequest,
                 }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
-    private Header<OrderGroupApiResponse> response(OrderGroup body){
+    public Header<OrderGroupApiResponse> response(OrderGroup body){
         OrderGroupApiResponse orderGroupApiResponse = OrderGroupApiResponse.builder()
                 .id(body.getId())
                 .status(body.getStatus())

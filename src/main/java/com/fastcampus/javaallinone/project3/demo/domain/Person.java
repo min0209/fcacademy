@@ -2,9 +2,7 @@ package com.fastcampus.javaallinone.project3.demo.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data   //@Getter + @Setter + @RequiredArgsConstructor + @ToString + @EqualsAndHashCode
@@ -26,6 +24,7 @@ public class Person {
 
     private String hobby;
 
+    @NonNull
     private String bloodType;
 
     private String address;
@@ -36,5 +35,9 @@ public class Person {
 
     @ToString.Exclude
     private String phoneNumber;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private Block block;
 
 }

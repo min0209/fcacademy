@@ -31,12 +31,12 @@ class PersonRepositoryTest {
         assertThat(people.get(0).getAge()).isEqualTo(1);
     }
     void constructorTest(){
-        Person person = new Person("a",2);
+        Person person = new Person("a",2,"A");
     }
     @Test
     void hashCodeAndEquals(){
-        Person person1 = new Person("B",2);
-        Person person2 = new Person("B",2);
+        Person person1 = new Person("B",2,"B");
+        Person person2 = new Person("B",2,"B");
 
         System.out.println(person1.equals(person2));
         System.out.println(person1.hashCode());

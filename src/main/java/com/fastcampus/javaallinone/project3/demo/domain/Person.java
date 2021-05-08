@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Data   //@Getter + @Setter + @RequiredArgsConstructor + @ToString + @EqualsAndHashCode
 @Entity
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor //required!!
@@ -37,7 +38,7 @@ public class Person {
     private String phoneNumber;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude
+
     private Block block;
 
 }

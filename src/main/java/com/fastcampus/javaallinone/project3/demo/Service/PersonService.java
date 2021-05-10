@@ -50,7 +50,4 @@ public class PersonService {
         return personRepository.findByBloodType(bloodType);
     }
 
-    public List<Person> getPeopleByBirthday(LocalDate startDate, LocalDate endDate){
-        return personRepository.findByBirthdayBetween(startDate,endDate);
-    }
 }

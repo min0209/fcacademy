@@ -77,15 +77,6 @@ class PersonServiceTest {
         result.forEach(System.out::println);
     }
 
-    @Test
-    void getPeopleByBirthday(){
-
-        givenPeople();
-        List<Person> result = personService.getPeopleByBirthday(LocalDate.of(1111,1,1),LocalDate.of(1112,1,1));
-        result.forEach(System.out::println);
-
-    }
-
     private void givenBlockPerson(String name, int age, String bloodType){
         Person blockPerson = new Person(name,age,bloodType);
         blockPerson.setBlock(new Block(name));
@@ -93,15 +84,14 @@ class PersonServiceTest {
         personRepository.save(blockPerson);
     }
     private void givenPeople() {
-        givenPerson("A",4,"A",LocalDate.of(1111,1,1));
-        givenPerson("B",3,"B",LocalDate.of(1111,2,2));
-        givenPerson("O",2,"O",LocalDate.of(1113,3,3));
-        givenPerson("A",1,"AB",LocalDate.of(1115,5,5));
+        givenPerson("A",4,"A");
+        givenPerson("B",3,"B");
+        givenPerson("O",2,"O");
+        givenPerson("A",1,"AB");
     }
 
-    private void givenPerson(String name, int age, String bloodType,LocalDate birthday) {
+    private void givenPerson(String name, int age, String bloodType) {
         Person person = new Person(name,age,bloodType);
-        person.setBirthday(birthday);
         personRepository.save(person);
     }
 }

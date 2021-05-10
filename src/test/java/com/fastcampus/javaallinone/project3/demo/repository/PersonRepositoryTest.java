@@ -1,10 +1,12 @@
 package com.fastcampus.javaallinone.project3.demo.repository;
 
 import com.fastcampus.javaallinone.project3.demo.domain.Person;
+import com.fastcampus.javaallinone.project3.demo.domain.dto.Birthday;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +50,37 @@ class PersonRepositoryTest {
 
         System.out.println(map);
         System.out.println(map.get(person2));
+    }
+
+    @Test
+    void findByBloodType(){
+        givenPeople();
+        //givenPerson("D",5,"A");
+
+        List<Person> result = personRepository.findByBloodType("A");
+        result.forEach(System.out::println);
+    }
+
+    @Test
+    void findByMonthOfBirthday(){
+
+        givenPeople();
+        List<Person> result = personRepository.findByMonthOfBirthday(2,4);
+        result.forEach(System.out::println);
+
+    }
+
+    private void givenPeople() {
+        givenPerson("A",4,"A",LocalDate.of(1111,1,1));
+        givenPerson("B",3,"B",LocalDate.of(1112,2,2));
+        givenPerson("O",2,"O",LocalDate.of(1113,3,3));
+        givenPerson("AB",1,"AB",LocalDate.of(1114,2,4));
+    }
+
+    private void givenPerson(String name, int age, String bloodType, LocalDate birthday) {
+        Person person = new Person(name,age,bloodType);
+        person.setBirthday(new Birthday(birthday.getYear(),birthday.getMonthValue(),birthday.getDayOfMonth()));
+        personRepository.save(person);
     }
 
 }

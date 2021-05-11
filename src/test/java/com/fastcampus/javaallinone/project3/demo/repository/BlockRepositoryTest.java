@@ -29,7 +29,8 @@ class BlockRepositoryTest {
 
         List<Block> blocks = blockRepository.findAll();
 
-        assertThat(blocks.size()).isEqualTo(1);
+        blocks.forEach(System.out::println);
+        assertThat(blocks.size()).isEqualTo(3);
         assertThat(blocks.get(0).getName()).isEqualTo("A");
     }
 

@@ -4,13 +4,13 @@ com/fastcampus/javaallinone/project3/demo/repository/BlockRepository.java
  com.fastcampus.javaallinone.project3.demo.repository.BlockRepository
 com/fastcampus/javaallinone/project3/demo/repository/PersonRepository.java
  com.fastcampus.javaallinone.project3.demo.repository.PersonRepository
-com/fastcampus/javaallinone/project3/demo/domain/Block.java
- com.fastcampus.javaallinone.project3.demo.domain.Block
-com/fastcampus/javaallinone/project3/demo/DemoApplication.java
- com.fastcampus.javaallinone.project3.demo.DemoApplication
-com/fastcampus/javaallinone/project3/demo/Service/PersonService.java
- com.fastcampus.javaallinone.project3.demo.Service.PersonService
-com/fastcampus/javaallinone/project3/demo/domain/Person.java
- com.fastcampus.javaallinone.project3.demo.domain.Person
 com/fastcampus/javaallinone/project3/demo/domain/dto/Birthday.java
  com.fastcampus.javaallinone.project3.demo.domain.dto.Birthday
+com/fastcampus/javaallinone/project3/demo/DemoApplication.java
+ com.fastcampus.javaallinone.project3.demo.DemoApplication
+com/fastcampus/javaallinone/project3/demo/domain/Block.java
+ com.fastcampus.javaallinone.project3.demo.domain.Block
+com/fastcampus/javaallinone/project3/demo/domain/Person.java
+ com.fastcampus.javaallinone.project3.demo.domain.Person
+com/fastcampus/javaallinone/project3/demo/Service/PersonService.java
+ com.fastcampus.javaallinone.project3.demo.Service.PersonService

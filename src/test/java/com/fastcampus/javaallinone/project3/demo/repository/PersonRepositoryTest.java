@@ -23,14 +23,19 @@ class PersonRepositoryTest {
     @Test
     void crud(){
         Person person = new Person();
-        person.setName("A");
-        person.setAge(1);
+        person.setName("F");
+        person.setAge(11);
+
         personRepository.save(person);
-        System.out.println(personRepository.findAll());
-        List<Person> people = personRepository.findAll();
+
+        List<Person> people = personRepository.findByName("F");
+        people.forEach(System.out::println);
+
         assertThat(people.size()).isEqualTo(1);
-        assertThat(people.get(0).getName()).isEqualTo("A");
-        assertThat(people.get(0).getAge()).isEqualTo(1);
+        assertThat(people.get(0).getName()).isEqualTo("F");
+        assertThat(people.get(0).getAge()).isEqualTo(11);
+
+        personRepository.delete(person);
     }
     void constructorTest(){
         Person person = new Person("a",2,"A");
@@ -54,19 +59,22 @@ class PersonRepositoryTest {
 
     @Test
     void findByBloodType(){
-        givenPeople();
-        //givenPerson("D",5,"A");
+        List<Person> result = personRepository.findByBloodType("O");
 
-        List<Person> result = personRepository.findByBloodType("A");
-        result.forEach(System.out::println);
+        assertThat(result.size()).isEqualTo(2);
+        assertThat(result.get(0).getName()).isEqualTo("C");
+        assertThat(result.get(1).getName()).isEqualTo("E");
     }
 
     @Test
     void findByMonthOfBirthday(){
 
-        givenPeople();
-        List<Person> result = personRepository.findByMonthOfBirthday(2,4);
+        List<Person> result = personRepository.findByMonthOfBirthday(5,5);
         result.forEach(System.out::println);
+
+        assertThat(result.size()).isEqualTo(2);
+        assertThat(result.get(0).getName()).isEqualTo("B");
+        assertThat(result.get(1).getName()).isEqualTo("E");
 
     }
 

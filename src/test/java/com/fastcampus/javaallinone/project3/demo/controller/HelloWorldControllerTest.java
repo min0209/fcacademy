@@ -28,7 +28,7 @@ public class HelloWorldControllerTest {
     void mockMvcTest() throws Exception {
         mockMvc= MockMvcBuilders.standaloneSetup(helloWorldController).build();
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/api/helloWorld")
+                MockMvcRequestBuilders.post("/api/helloWorld")
         ).andDo(MockMvcResultHandlers.print())
         .andExpect(MockMvcResultMatchers.status().isOk())
         .andExpect(MockMvcResultMatchers.content().string("hello world"));

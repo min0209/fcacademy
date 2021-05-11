@@ -25,12 +25,7 @@ public class PersonService {
 
 
     public List<Person> getPeopleExcludeBlocks(){
-//        List<Person> people = personRepository.findAll();
-////        List<Block> blockList = blockRepository.findAll();
-////
-////        List<String> blockNames = blockList.stream().map(Block::getName).collect(Collectors.toList());
-//        return people.stream().filter(person -> person.getBlock() == null).collect(Collectors.toList());
-       return personRepository.findByBlockIsNull();
+        return personRepository.findByBlockIsNull();
     }
 
     @Transactional(readOnly = true)

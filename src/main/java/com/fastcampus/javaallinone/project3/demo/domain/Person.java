@@ -18,7 +18,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor    //required!!
-@Where(clause = "deleted = false")
 public class Person {
 
     @Id
@@ -30,16 +29,7 @@ public class Person {
     @Column(nullable = false)
     private String name;
 
-    @Min(1)
-    @NonNull
-    private  int age;
-
     private String hobby;
-
-    @NonNull
-    @NotEmpty
-    @Column(nullable = false)
-    private String bloodType;
 
     private String address;
 
@@ -49,25 +39,14 @@ public class Person {
 
     private String job;
 
-    @ToString.Exclude
     private String phoneNumber;
 
     @ColumnDefault("0")
     private boolean deleted;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-
-    private Block block;
-
     public void set(PersonDto personDto){
-        if(personDto.getAge() != 0){
-            this.setAge(personDto.getAge());
-        }
         if(personDto.getHobby() != null){
             this.setHobby(personDto.getHobby());
-        }
-        if(personDto.getBloodType() != null){
-            this.setBloodType(personDto.getBloodType());
         }
         if(personDto.getAddress() != null){
             this.setAddress(personDto.getAddress());
@@ -78,6 +57,23 @@ public class Person {
         if(personDto.getPhoneNumber() != null){
             this.setPhoneNumber(personDto.getPhoneNumber());
         }
+        if(personDto.getBirthday() != null){
+            this.setBirthday(Birthday.of(personDto.getBirthday()));
+        }
     }
 
+    public Integer getAge(){
+        if(birthday != null){
+            return LocalDate.now().getYear()-birthday.getYearOfBirthday()+1;
+        }else{
+            return null;
+        }
+    }
+    public Boolean isBirthdayToday(){
+        if(birthday != null){
+            return LocalDate.now().equals(LocalDate.of(birthday.getYearOfBirthday(),birthday.getMonthOfBirthday(),birthday.getDayOfBirthday()));
+        }else{
+            return null;
+        }
+    }
 }

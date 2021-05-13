@@ -1,9 +1,7 @@
-com/fastcampus/javaallinone/project3/demo/repository/BlockRepositoryTest.java
- com.fastcampus.javaallinone.project3.demo.repository.BlockRepositoryTest
-com/fastcampus/javaallinone/project3/demo/DemoApplicationTests.java
- com.fastcampus.javaallinone.project3.demo.DemoApplicationTests
 com/fastcampus/javaallinone/project3/demo/controller/HelloWorldControllerTest.java
  com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest
+com/fastcampus/javaallinone/project3/demo/DemoApplicationTests.java
+ com.fastcampus.javaallinone.project3.demo.DemoApplicationTests
 com/fastcampus/javaallinone/project3/demo/controller/PersonControllerTest.java
  com.fastcampus.javaallinone.project3.demo.controller.PersonControllerTest
 com/fastcampus/javaallinone/project3/demo/Service/PersonServiceTest.java

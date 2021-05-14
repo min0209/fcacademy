@@ -30,7 +30,10 @@ public class PersonService {
     }
 
     @Transactional
-    public void put(Person person){
+    public void put(PersonDto personDto){
+        Person person = new Person();
+        person.set(personDto);
+        person.setName(personDto.getName());
         personRepository.save(person);
     }
 
@@ -59,6 +62,5 @@ public class PersonService {
         Person person = personRepository.findById(id).orElseThrow(() -> new RuntimeException("id does not exist"));
         person.setDeleted(true);
         personRepository.save(person);
-        personRepository.findAll().forEach(System.out::println);
     }
 }

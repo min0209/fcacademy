@@ -27,22 +27,18 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void postPerson(@RequestBody Person person){
-        personService.put(person);
-        log.info("person : {}",personRepository.findAll());
+    public void postPerson(@RequestBody PersonDto personDto){
+        personService.put(personDto);
     }
 
     @PutMapping(value = "/{id}")
     public void modifyPerson(@PathVariable Long id, @RequestBody PersonDto personDto){
         personService.modify(id,personDto);
-        System.out.println(personRepository.findAll());
-        log.info("person : {}",personRepository.findAll());
     }
 
     @PatchMapping(value = "/{id}")
     public void modifyPerson(@PathVariable Long id, String name){
         personService.modify(id,name);
-        log.info("person : {}",personRepository.findAll());
     }
 
     @DeleteMapping(value = "/{id}")

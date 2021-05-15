@@ -6,18 +6,18 @@ com/fastcampus/javaallinone/project3/demo/domain/Block.java
  com.fastcampus.javaallinone.project3.demo.domain.Block
 com/fastcampus/javaallinone/project3/demo/domain/dto/Birthday.java
  com.fastcampus.javaallinone.project3.demo.domain.dto.Birthday
-com/fastcampus/javaallinone/project3/demo/repository/PersonRepository.java
- com.fastcampus.javaallinone.project3.demo.repository.PersonRepository
+com/fastcampus/javaallinone/project3/demo/domain/Person.java
+ com.fastcampus.javaallinone.project3.demo.domain.Person
 com/fastcampus/javaallinone/project3/demo/configuration/JsonConfig.java
  com.fastcampus.javaallinone.project3.demo.configuration.JsonConfig
  com.fastcampus.javaallinone.project3.demo.configuration.JsonConfig$BirthdayModule
-com/fastcampus/javaallinone/project3/demo/domain/Person.java
- com.fastcampus.javaallinone.project3.demo.domain.Person
-com/fastcampus/javaallinone/project3/demo/configuration/serializer/BirthdaySerializer.java
- com.fastcampus.javaallinone.project3.demo.configuration.serializer.BirthdaySerializer
 com/fastcampus/javaallinone/project3/demo/controller/dto/PersonDto.java
  com.fastcampus.javaallinone.project3.demo.controller.dto.PersonDto
+com/fastcampus/javaallinone/project3/demo/configuration/serializer/BirthdaySerializer.java
+ com.fastcampus.javaallinone.project3.demo.configuration.serializer.BirthdaySerializer
 com/fastcampus/javaallinone/project3/demo/Service/PersonService.java
  com.fastcampus.javaallinone.project3.demo.Service.PersonService
+com/fastcampus/javaallinone/project3/demo/repository/PersonRepository.java
+ com.fastcampus.javaallinone.project3.demo.repository.PersonRepository
 com/fastcampus/javaallinone/project3/demo/controller/PersonController.java
  com.fastcampus.javaallinone.project3.demo.controller.PersonController

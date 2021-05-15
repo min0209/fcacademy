@@ -18,6 +18,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor    //required!!
+@Where(clause = "deleted = false")
 public class Person {
 
     @Id

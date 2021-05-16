@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.078s</div>
+<div class="counter">0.711s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">helloWorld()</td>
-<td class="success">0.003s</td>
+<td class="success">0.399s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">mockMvcTest()</td>
-<td class="success">0.075s</td>
+<td class="success">0.312s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,16 +92,54 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2021-05-15 15:44:14.341  INFO 4128 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest], using SpringBootContextLoader
-2021-05-15 15:44:14.342  INFO 4128 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2021-05-15 15:44:14.342  INFO 4128 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]: HelloWorldControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2021-05-15 15:44:14.352  INFO 4128 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.fastcampus.javaallinone.project3.demo.DemoApplication for test class com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest
-2021-05-15 15:44:14.354  INFO 4128 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2021-05-15 15:44:14.354  INFO 4128 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c73f8fe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7259883d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@303484f3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4883bb61, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@bf40e87, org.springframework.test.context.support.DirtiesContextTestExecutionListener@355267a4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@21d56ee1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@74d89109, org.springframework.test.context.event.EventPublishingTestExecutionListener@5f733923, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@79ba0a2e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7312c19e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4372462c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@58ed540, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2ccc44a5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@49377e93]
+<pre>23:44:42.793 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:44:42.811 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:44:42.914 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+23:44:42.956 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest], using SpringBootContextLoader
+23:44:42.973 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]: class path resource [com/fastcampus/javaallinone/project3/demo/controller/HelloWorldControllerTest-context.xml] does not exist
+23:44:42.977 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]: class path resource [com/fastcampus/javaallinone/project3/demo/controller/HelloWorldControllerTestContext.groovy] does not exist
+23:44:42.978 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:44:42.981 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]: HelloWorldControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:44:43.138 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]
+23:44:43.361 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\study\JAVA\Java_fcacademy\project\fcacademy\build\classes\java\main\com\fastcampus\javaallinone\project3\demo\DemoApplication.class]
+23:44:43.364 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.fastcampus.javaallinone.project3.demo.DemoApplication for test class com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest
+23:44:43.506 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.fastcampus.javaallinone.project3.demo.controller.HelloWorldControllerTest]: using defaults.
+23:44:43.506 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+23:44:43.527 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@709fbb79, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@299c3b7, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@b0e5d32, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@528bcd37, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5f42f06c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@138a1448, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a942cc6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@667ab6d6, org.springframework.test.context.event.EventPublishingTestExecutionListener@2e73ebe5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6d988237, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@26a1615e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@15debf5a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@24c352c7, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@de3e552, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@20e5ce21]
+23:44:43.533 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1d91130f testClass = HelloWorldControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1dcb4920 testClass = HelloWorldControllerTest, locations = '{}', classes = '{class com.fastcampus.javaallinone.project3.demo.DemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@e90b0ea, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@16fb8fea, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@187908c3, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7d4c334c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@76749389, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3fa56e2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+23:44:43.573 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.5)
+
+2021-05-16 23:44:44.394  INFO 12540 --- [    Test worker] c.f.j.p.d.c.HelloWorldControllerTest     : Starting HelloWorldControllerTest using Java 15.0.2 on LAPTOP-170P7NSC with PID 12540 (started by admin in D:\study\JAVA\Java_fcacademy\project\fcacademy)
+2021-05-16 23:44:44.401  INFO 12540 --- [    Test worker] c.f.j.p.d.c.HelloWorldControllerTest     : No active profile set, falling back to default profiles: default
+2021-05-16 23:44:45.301  INFO 12540 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-16 23:44:45.382  INFO 12540 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interfaces.
+2021-05-16 23:44:46.093  INFO 12540 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-16 23:44:46.337  INFO 12540 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-16 23:44:46.454  INFO 12540 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-16 23:44:46.533  INFO 12540 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-05-16 23:44:46.761  INFO 12540 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-16 23:44:46.954  INFO 12540 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: drop table if exists block CASCADE 
+Hibernate: drop table if exists person CASCADE 
+Hibernate: create table block (id bigint generated by default as identity, end_date date, name varchar(255), reason varchar(255), start_date date, primary key (id))
+Hibernate: create table person (id bigint generated by default as identity, address varchar(255), day_of_birthday integer, month_of_birthday integer, year_of_birthday integer, deleted boolean default 0 not null, hobby varchar(255), job varchar(255), name varchar(255) not null, phone_number varchar(255), primary key (id))
+2021-05-16 23:44:48.194  INFO 12540 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-16 23:44:48.207  INFO 12540 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-16 23:44:49.165  WARN 12540 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-16 23:44:49.372  INFO 12540 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-16 23:44:49.931  INFO 12540 --- [    Test worker] c.f.j.p.d.c.HelloWorldControllerTest     : Started HelloWorldControllerTest in 6.353 seconds (JVM running for 8.493)
 hello world
-2021-05-15 15:44:14.377  INFO 4128 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2021-05-15 15:44:14.377  INFO 4128 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-05-15 15:44:14.377  INFO 4128 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-05-16 23:44:50.454  INFO 12540 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-05-16 23:44:50.455  INFO 12540 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-05-16 23:44:50.457  INFO 12540 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
 
 MockHttpServletRequest:
       HTTP Method = POST
@@ -150,7 +188,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8.3</a> at 2021. 5. 15. 오후 3:44:14</p>
+<a href="http://www.gradle.org">Gradle 6.8.3</a> at 2021. 5. 16. 오후 11:44:52</p>
 </div>
 </div>
 </body>

@@ -1,5 +1,7 @@
 package com.fastcampus.javaallinone.project3.demo.Service;
 
+import com.fastcampus.javaallinone.project3.demo.Exception.PersonNotFoundException;
+import com.fastcampus.javaallinone.project3.demo.Exception.RenameNotPermittedException;
 import com.fastcampus.javaallinone.project3.demo.controller.dto.PersonDto;
 import com.fastcampus.javaallinone.project3.demo.domain.Person;
 import com.fastcampus.javaallinone.project3.demo.repository.PersonRepository;
@@ -37,10 +39,10 @@ public class PersonService {
 
     @Transactional
     public void modify(Long id, PersonDto personDto){
-        Person personAtDb = personRepository.findById(id).orElseThrow(() -> new RuntimeException("id does not exist"));
+        Person personAtDb = personRepository.findById(id).orElseThrow(PersonNotFoundException::new);
 
         if(!personDto.getName().equals(personAtDb.getName())){
-            throw new RuntimeException("Different name !!");
+            throw new RenameNotPermittedException();
         }
 
         personAtDb.set(personDto);
@@ -49,7 +51,8 @@ public class PersonService {
 
     @Transactional
     public void modify(Long id, String name){
-        Person personAtDb = personRepository.findById(id).orElseThrow(() -> new RuntimeException("id does not exist"));
+        Person personAtDb = personRepository.findById(id)
+                .orElseThrow(PersonNotFoundException::new);
 
         personAtDb.setName(name);
         personRepository.save(personAtDb);
@@ -57,7 +60,7 @@ public class PersonService {
 
     @Transactional
     public void delete(Long id){
-        Person person = personRepository.findById(id).orElseThrow(() -> new RuntimeException("id does not exist"));
+        Person person = personRepository.findById(id).orElseThrow(PersonNotFoundException::new);
         person.setDeleted(true);
         personRepository.save(person);
     }

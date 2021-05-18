@@ -1,5 +1,7 @@
 package com.fastcampus.javaallinone.project3.demo.Service;
 
+import com.fastcampus.javaallinone.project3.demo.Exception.PersonNotFoundException;
+import com.fastcampus.javaallinone.project3.demo.Exception.RenameNotPermittedException;
 import com.fastcampus.javaallinone.project3.demo.controller.dto.PersonDto;
 import com.fastcampus.javaallinone.project3.demo.domain.Person;
 import com.fastcampus.javaallinone.project3.demo.domain.dto.Birthday;
@@ -72,7 +74,7 @@ class PersonServiceTest {
         when(personRepository.findById(10L))
                 .thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> personService.modify(10L,mockPersonDto())) ;
+        assertThrows(PersonNotFoundException.class, () -> personService.modify(10L,mockPersonDto())) ;
     }
 
     @Test
@@ -80,7 +82,7 @@ class PersonServiceTest {
         when(personRepository.findById(10L))
                 .thenReturn(Optional.of(new Person("H")));
 
-        assertThrows(RuntimeException.class, () -> personService.modify(10L,mockPersonDto())) ;
+        assertThrows(RenameNotPermittedException.class, () -> personService.modify(10L,mockPersonDto())) ;
     }
 
     @Test
@@ -96,14 +98,16 @@ class PersonServiceTest {
 
     @Test
     void modifyByNameIfPersonNotFound(){
-        when(personRepository.findById(10L)).thenReturn(Optional.empty());
+        when(personRepository.findById(10L))
+                .thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> personService.modify(10L,"K"));
+        assertThrows(PersonNotFoundException.class, () -> personService.modify(10L,"K"));
     }
 
     @Test
     void modifyByName(){
-        when(personRepository.findById(1L)).thenReturn(Optional.of(new Person("V")));
+        when(personRepository.findById(1L))
+                .thenReturn(Optional.of(new Person("V")));
         personService.modify(1L,"K");
         verify(personRepository,times(1)).save(argThat(new IsNameWillBeUpdated()));
 
@@ -113,7 +117,7 @@ class PersonServiceTest {
     void deleteIfPersonNotFound(){
         when(personRepository.findById(10L))
                 .thenReturn(Optional.empty());
-        assertThrows(RuntimeException.class, () -> personService.delete(10L));
+        assertThrows(PersonNotFoundException.class, () -> personService.delete(10L));
 
     }
 

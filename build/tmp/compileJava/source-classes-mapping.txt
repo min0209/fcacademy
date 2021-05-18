@@ -1,5 +1,5 @@
-com/fastcampus/javaallinone/project3/demo/controller/HelloWorldController.java
- com.fastcampus.javaallinone.project3.demo.controller.HelloWorldController
+com/fastcampus/javaallinone/project3/demo/Exception/dto/ErrorResponse.java
+ com.fastcampus.javaallinone.project3.demo.Exception.dto.ErrorResponse
 com/fastcampus/javaallinone/project3/demo/DemoApplication.java
  com.fastcampus.javaallinone.project3.demo.DemoApplication
 com/fastcampus/javaallinone/project3/demo/domain/Block.java
@@ -17,7 +17,15 @@ com/fastcampus/javaallinone/project3/demo/configuration/serializer/BirthdaySeria
  com.fastcampus.javaallinone.project3.demo.configuration.serializer.BirthdaySerializer
 com/fastcampus/javaallinone/project3/demo/repository/PersonRepository.java
  com.fastcampus.javaallinone.project3.demo.repository.PersonRepository
+com/fastcampus/javaallinone/project3/demo/Exception/PersonNotFoundException.java
+ com.fastcampus.javaallinone.project3.demo.Exception.PersonNotFoundException
+com/fastcampus/javaallinone/project3/demo/Exception/RenameNotPermittedException.java
+ com.fastcampus.javaallinone.project3.demo.Exception.RenameNotPermittedException
 com/fastcampus/javaallinone/project3/demo/Service/PersonService.java
  com.fastcampus.javaallinone.project3.demo.Service.PersonService
+com/fastcampus/javaallinone/project3/demo/controller/HelloWorldController.java
+ com.fastcampus.javaallinone.project3.demo.controller.HelloWorldController
 com/fastcampus/javaallinone/project3/demo/controller/PersonController.java
  com.fastcampus.javaallinone.project3.demo.controller.PersonController
+com/fastcampus/javaallinone/project3/demo/Exception/handler/GlobalExceptionHandler.java
+ com.fastcampus.javaallinone.project3.demo.Exception.handler.GlobalExceptionHandler

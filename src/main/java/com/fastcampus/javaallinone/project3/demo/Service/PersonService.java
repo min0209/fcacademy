@@ -7,6 +7,8 @@ import com.fastcampus.javaallinone.project3.demo.domain.Person;
 import com.fastcampus.javaallinone.project3.demo.repository.PersonRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,14 +21,17 @@ public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
+    public Page<Person> getAll(Pageable pageable){
+        return personRepository.findAll(pageable);
+    }
+
+    public List<Person> getPeopleByName(String name){
+        return personRepository.findByName(name);
+    }
+
     @Transactional(readOnly = true)
     public Person getPerson(Long id){
         return personRepository.findById(id).orElse(null);
-    }
-
-    @Transactional
-    public List<Person> getPeopleByName(String name){
-        return personRepository.findByName(name);
     }
 
     @Transactional
@@ -65,4 +70,5 @@ public class PersonService {
         person.setDeleted(true);
         personRepository.save(person);
     }
+
 }
